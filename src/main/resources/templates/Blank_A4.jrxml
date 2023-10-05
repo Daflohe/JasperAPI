@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59d09fc0-27a4-4a02-ba06-2f8f4cfafd95">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AsoftyDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="543"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="446"/>
+	<parameter name="Consecutive" class="java.lang.String" isForPrompting="false" evaluationTime="Late">
+		<parameterDescription><![CDATA[consecutivo de cotizacion]]></parameterDescription>
+		<defaultValueExpression><![CDATA[90]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *
+FROM asoftydb.cotizacion
+	INNER JOIN asoftydb.cotizacionsellersview ON 
+	 asoftydb.cotizacionsellersview.`Consecutive` = asoftydb.cotizacion.`Consecutive` 
+	AND asoftydb.cotizacionsellersview.`Seller` = asoftydb.cotizacion.`Seller` 
+	
+
+WHERE 
+	 asoftydb.cotizacion.`Consecutive` = $P{Consecutive}]]>
+	</queryString>
+	<field name="Idcontrol" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Idcontrol"/>
+		<property name="com.jaspersoft.studio.field.label" value="Idcontrol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+	</field>
+	<field name="CompanyCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CompanyCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="CompanyCode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Codigo compañia]]></fieldDescription>
+	</field>
+	<field name="Consecutive" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Consecutive"/>
+		<property name="com.jaspersoft.studio.field.label" value="Consecutive"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Consecutivo]]></fieldDescription>
+	</field>
+	<field name="Date" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Fecha]]></fieldDescription>
+	</field>
+	<field name="ValidityDays" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ValidityDays"/>
+		<property name="com.jaspersoft.studio.field.label" value="ValidityDays"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Dias de vigencia]]></fieldDescription>
+	</field>
+	<field name="Expiration" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="Expiration"/>
+		<property name="com.jaspersoft.studio.field.label" value="Expiration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Vencimiento]]></fieldDescription>
+	</field>
+	<field name="MoneyType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MoneyType"/>
+		<property name="com.jaspersoft.studio.field.label" value="MoneyType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Moneda]]></fieldDescription>
+	</field>
+	<field name="TRM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TRM"/>
+		<property name="com.jaspersoft.studio.field.label" value="TRM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Trm]]></fieldDescription>
+	</field>
+	<field name="Replicate" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Replicate"/>
+		<property name="com.jaspersoft.studio.field.label" value="Replicate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Replicar]]></fieldDescription>
+	</field>
+	<field name="Prospect" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Prospect"/>
+		<property name="com.jaspersoft.studio.field.label" value="Prospect"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Pospecto]]></fieldDescription>
+	</field>
+	<field name="Custome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Custome"/>
+		<property name="com.jaspersoft.studio.field.label" value="Custome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Cliente]]></fieldDescription>
+	</field>
+	<field name="ThirdType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ThirdType"/>
+		<property name="com.jaspersoft.studio.field.label" value="ThirdType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Tipo tercero]]></fieldDescription>
+	</field>
+	<field name="Origin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Origin"/>
+		<property name="com.jaspersoft.studio.field.label" value="Origin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Origen]]></fieldDescription>
+	</field>
+	<field name="Destination" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Destination"/>
+		<property name="com.jaspersoft.studio.field.label" value="Destination"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Destino]]></fieldDescription>
+	</field>
+	<field name="Via" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Via"/>
+		<property name="com.jaspersoft.studio.field.label" value="Via"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Via]]></fieldDescription>
+	</field>
+	<field name="Operation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Operation"/>
+		<property name="com.jaspersoft.studio.field.label" value="Operation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Operacion]]></fieldDescription>
+	</field>
+	<field name="OperationType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OperationType"/>
+		<property name="com.jaspersoft.studio.field.label" value="OperationType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Tipo operacion]]></fieldDescription>
+	</field>
+	<field name="Icoterm" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Icoterm"/>
+		<property name="com.jaspersoft.studio.field.label" value="Icoterm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Termino de negociacion]]></fieldDescription>
+	</field>
+	<field name="CargoValue" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CargoValue"/>
+		<property name="com.jaspersoft.studio.field.label" value="CargoValue"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Valor de la carga]]></fieldDescription>
+	</field>
+	<field name="OriginExpense" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="OriginExpense"/>
+		<property name="com.jaspersoft.studio.field.label" value="OriginExpense"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Gastos en origen]]></fieldDescription>
+	</field>
+	<field name="SafeValue" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SafeValue"/>
+		<property name="com.jaspersoft.studio.field.label" value="SafeValue"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Valor del seguro]]></fieldDescription>
+	</field>
+	<field name="CIFValue" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CIFValue"/>
+		<property name="com.jaspersoft.studio.field.label" value="CIFValue"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Valor del CIF]]></fieldDescription>
+	</field>
+	<field name="WeightCargo" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="WeightCargo"/>
+		<property name="com.jaspersoft.studio.field.label" value="WeightCargo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Peso Carga]]></fieldDescription>
+	</field>
+	<field name="UnitMasurement" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UnitMasurement"/>
+		<property name="com.jaspersoft.studio.field.label" value="UnitMasurement"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Unidad de medida]]></fieldDescription>
+	</field>
+	<field name="Observations" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Observations"/>
+		<property name="com.jaspersoft.studio.field.label" value="Observations"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Obervaciones]]></fieldDescription>
+	</field>
+	<field name="Seller" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Seller"/>
+		<property name="com.jaspersoft.studio.field.label" value="Seller"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Vendedor]]></fieldDescription>
+	</field>
+	<field name="CostCenter" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CostCenter"/>
+		<property name="com.jaspersoft.studio.field.label" value="CostCenter"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Centro de costos]]></fieldDescription>
+	</field>
+	<field name="SellTotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SellTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="SellTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Total venta]]></fieldDescription>
+	</field>
+	<field name="CostTotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CostTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="CostTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Total Costo]]></fieldDescription>
+	</field>
+	<field name="Utility" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Utility"/>
+		<property name="com.jaspersoft.studio.field.label" value="Utility"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Utilidad]]></fieldDescription>
+	</field>
+	<field name="Performance" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Performance"/>
+		<property name="com.jaspersoft.studio.field.label" value="Performance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Rendimiento]]></fieldDescription>
+	</field>
+	<field name="Branch" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Branch"/>
+		<property name="com.jaspersoft.studio.field.label" value="Branch"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Sucursal]]></fieldDescription>
+	</field>
+	<field name="FreightCal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FreightCal"/>
+		<property name="com.jaspersoft.studio.field.label" value="FreightCal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+		<fieldDescription><![CDATA[Calcular flete]]></fieldDescription>
+	</field>
+	<field name="Enabled" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="Enabled"/>
+		<property name="com.jaspersoft.studio.field.label" value="Enabled"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+	</field>
+	<field name="AuditDate" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="AuditDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="AuditDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+	</field>
+	<field name="Username" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Username"/>
+		<property name="com.jaspersoft.studio.field.label" value="Username"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacion"/>
+	</field>
+	<field name="COLUMN_37" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Consecutive"/>
+		<property name="com.jaspersoft.studio.field.label" value="Consecutive"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<field name="COLUMN_38" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Seller"/>
+		<property name="com.jaspersoft.studio.field.label" value="Seller"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<field name="COLUMN_39" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="Enabled"/>
+		<property name="com.jaspersoft.studio.field.label" value="Enabled"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<field name="COLUMN_40" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CompanyCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="CompanyCode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<field name="Situation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Situation"/>
+		<property name="com.jaspersoft.studio.field.label" value="Situation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+		<fieldDescription><![CDATA[Situacion]]></fieldDescription>
+	</field>
+	<field name="COLUMN_42" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<field name="FirstName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FirstName"/>
+		<property name="com.jaspersoft.studio.field.label" value="FirstName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+		<fieldDescription><![CDATA[Nombre]]></fieldDescription>
+	</field>
+	<field name="MiddleName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MiddleName"/>
+		<property name="com.jaspersoft.studio.field.label" value="MiddleName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+		<fieldDescription><![CDATA[Segundo nombre]]></fieldDescription>
+	</field>
+	<field name="LastName1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LastName1"/>
+		<property name="com.jaspersoft.studio.field.label" value="LastName1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+		<fieldDescription><![CDATA[Apellido1]]></fieldDescription>
+	</field>
+	<field name="LastName2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LastName2"/>
+		<property name="com.jaspersoft.studio.field.label" value="LastName2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+		<fieldDescription><![CDATA[Apellido2]]></fieldDescription>
+	</field>
+	<field name="EmployeeId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="EmployeeId"/>
+		<property name="com.jaspersoft.studio.field.label" value="EmployeeId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cotizacionsellersview"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="100" height="30" uuid="833423b9-c848-4652-804c-ad93e64123bc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec4ce0d6-eaeb-41b2-bcd8-3e044b1a76c5"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consecutive]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="15" width="100" height="30" uuid="b256c296-d25a-44e6-bbc1-c37a0ff1295d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab946f51-f2a1-475d-8ad5-eed295eb3089"/>
+				</reportElement>
+				<text><![CDATA[Seller]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="15" width="100" height="30" uuid="b458e758-3f00-4a05-92a1-0d515cd5a346">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c1c5536-892e-4f6b-9fd3-28f23db8db45"/>
+				</reportElement>
+				<text><![CDATA[FirstName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="20" width="100" height="30" uuid="082ee31c-51ab-4c90-b890-85e6d2fecfcd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="58ff750a-2870-4e04-bd9d-f2fa53dc413d"/>
+				</reportElement>
+				<text><![CDATA[LastName1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="20" width="100" height="30" uuid="71d9f3e2-79ac-489e-a226-e34ebf356ea0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8508dc62-b92c-4bfd-94de-95755117c6b3"/>
+				</reportElement>
+				<text><![CDATA[Origin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="15" width="100" height="30" uuid="c22839e7-a4a8-45f5-98c9-81c85e175d65">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea12797d-12de-472f-ac7b-974d1621be12"/>
+				</reportElement>
+				<text><![CDATA[LastName2]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="100" height="30" uuid="7c6bb0f4-2f9d-4168-af28-fa705a001771">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec4ce0d6-eaeb-41b2-bcd8-3e044b1a76c5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Consecutive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="20" width="100" height="30" uuid="b2af4a09-45aa-4943-bd90-758e1f6f688c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab946f51-f2a1-475d-8ad5-eed295eb3089"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_38}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="20" width="100" height="30" uuid="60457c4f-8448-4e27-be07-7e116eaa5c7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c1c5536-892e-4f6b-9fd3-28f23db8db45"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="20" width="100" height="30" uuid="26e1d9ec-bc4a-4177-ac86-28243a9cb146">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="58ff750a-2870-4e04-bd9d-f2fa53dc413d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{LastName1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="20" width="100" height="30" uuid="ed30c203-ab41-42cc-8209-e0567324b2cb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8508dc62-b92c-4bfd-94de-95755117c6b3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Origin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="20" width="100" height="30" uuid="8d44a837-9003-40e1-9911-51c37038471f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea12797d-12de-472f-ac7b-974d1621be12"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{LastName2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
